@@ -32,5 +32,7 @@ module DevOneBitCode
 
     config.generators.assets = false
     config.generators.helper = false
+    # Setting up FactoryBot dir
+    config.generators.factory_bot dir: 'features/factories'
   end
 end
