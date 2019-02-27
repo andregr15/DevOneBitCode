@@ -40,6 +40,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'mini_magick'
 
+gem 'devise'
+
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
