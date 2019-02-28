@@ -42,6 +42,8 @@ gem 'mini_magick'
 
 gem 'devise'
 
+gem 'pundit'
+
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
