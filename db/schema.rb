@@ -193,6 +193,7 @@ ActiveRecord::Schema.define(version: 2019_02_28_131927) do
   add_foreign_key "experiences", "portfolios"
   add_foreign_key "hobbies", "portfolios"
   add_foreign_key "languages", "portfolios"
+  add_foreign_key "portfolio_tags", "portfolios"
   add_foreign_key "portfolio_tags", "tags"
   add_foreign_key "portfolios", "users"
   add_foreign_key "profiles", "portfolios"
