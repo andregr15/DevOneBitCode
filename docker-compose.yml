@@ -18,6 +18,7 @@ services:
       - 'gems:/gems'
     stdin_open: true
     tty: true
+    privileged: true
 
   mailcatcher:
     image: tophfr/mailcatcher
