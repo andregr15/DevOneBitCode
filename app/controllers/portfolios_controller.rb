@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-  before_action :load_portfolios, only: :index
+  #before_action :load_portfolios, only: :index
 
   def index
     authorize(Portfolio)
