@@ -1,0 +1,39 @@
+<div class="card z-depth-4">
+  <div class="card-content">
+    <div class="row">
+      <div class="col m10 offset-m1 s10 offset-s1">
+        <%= form_with(model: resource, url: registration_path(resource_name), local: true) do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="input-field">
+            <%= f.email_field :email, autocomplete: 'email' %>
+            <%= f.label :email %>
+          </div>
+
+          <div class="input-field">
+            <%= f.password_field :password, autocomplete: 'off', class: 'field' %>
+            <%= f.label :password, 'Senha' %>
+            <br/>
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+          </div>
+
+          <div class="input-field">
+            <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'field' %>
+            <%= f.label :password_confirmation, 'Confirmação de senha'%>
+          </div>
+
+          <div class="submit-button center row">
+            <button class="btn btn-large custom-blue form-button col m12 s12" type='submit'>
+              <i class="material-icons right">add</i>
+              Criar agora
+            </button>
+          </div>
+
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
