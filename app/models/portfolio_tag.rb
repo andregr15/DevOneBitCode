@@ -1,7 +1,8 @@
 class PortfolioTag < ApplicationRecord
+  belongs_to :porfolio
   belongs_to :tag
 
-  validates :max_tags_for_portfolio
+  validate :max_tags_for_portfolio
   validates :tag_id, uniqueness: { scope: :portfolio_id }
 
   private
