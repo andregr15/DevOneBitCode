@@ -12,7 +12,7 @@
       Dado que o usuário tem paramêtros válidos
       Quando preenche e submete o formulário
       Então o usuário deve ver seus portfólios
-      E é visível o link Scenario: 
+      E é visível o link sair 
 
     Cenário: Credenciais inválidas
       Dado que o usuário tem paramêtros inválidos

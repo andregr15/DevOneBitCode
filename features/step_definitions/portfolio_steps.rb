@@ -1,4 +1,4 @@
-Quando 'clica para cria um novo portfólio' do
+Quando 'clica para criar um novo portfólio' do
   find(:xpath, "//a[@class='new-portfolio']").click
 end
 
@@ -10,6 +10,6 @@ Então 'deve ver os dados iniciais do portfólio' do
   expect(page).to have_content(@user.portfolios.last.slug)
 end
 
-Então 'é direcionado para a página de edião do portfólio' do
+Então 'é direcionado para a página de edição do portfólio' do
   expect(page).to have_current_path(edit_portfolio_path(@user.portfolios.last))
 end
