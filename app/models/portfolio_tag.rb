@@ -1,5 +1,5 @@
 class PortfolioTag < ApplicationRecord
-  belongs_to :porfolio
+  belongs_to :portfolio
   belongs_to :tag
 
   validate :max_tags_for_portfolio
