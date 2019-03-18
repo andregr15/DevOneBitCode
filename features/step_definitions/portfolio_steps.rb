@@ -34,7 +34,12 @@ Quando "clica no checkbox {string}" do |field|
   find("input[name='portfolio[#{field}]'] + span").click
 end
 
-Então "então o campo {string} do portfólio é atualizado" do |field|
+Quando "clica no switch {string}" do |field|
+  @new_value = !@portfolio[field]
+  find("input[name='portfolio[#{field}]'] + span").click
+end
+
+Então "o campo {string} do portfólio é atualizado" do |field|
   wait_for_ajax
   @portfolio.reload
   expect(@portfolio[field]).to eq(@new_value)
