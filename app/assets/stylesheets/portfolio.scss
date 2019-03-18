@@ -43,5 +43,29 @@
       margin-bottom: 55%
     }
   }
+
 }
 
+div.slug-actions{
+  margin-top: 2%;
+
+  .element{
+    margin-left: 10%;
+    font-size: 25px;
+    color: get-custom-color('custom-grey');
+
+    &:hover{
+      cursor: pointer;
+      color: get-custom-color('custom-grey', 'darken-1');
+    }
+  }
+}
+
+i.tooltipped{
+  color: get-custom-color('custom-grey');
+  
+  &:hover{
+    cursor: default;
+    color: get-custom-color('custom-grey', 'darken-1');
+  }
+}

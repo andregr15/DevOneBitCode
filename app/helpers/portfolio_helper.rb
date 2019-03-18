@@ -21,6 +21,7 @@ module PortfolioHelper
     disabled_tags_quant = Portfolio::MAX_NUMBER_OF_TAGS - tags.count
     tags.each { |tag| concat draw_tag(tag.title) }
     disabled_tags_quant.times { concat draw_tag(unused_label, color: 'grey') }
+    return nil
   end
 
   private

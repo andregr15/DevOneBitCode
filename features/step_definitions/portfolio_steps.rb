@@ -26,7 +26,7 @@ Quando "edita o slug" do
 end
 
 Quando "sai do campo slug" do
-  page.execute_script("document.getElementByName('portfolio[slug]')[0].dispatchEvent(new Event('change'));")
+  page.execute_script("document.getElementsByName('portfolio[slug]')[0].dispatchEvent(new Event('change'));")
 end
 
 Quando "clica no checkbox {string}" do |field|
