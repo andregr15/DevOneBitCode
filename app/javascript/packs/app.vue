@@ -1,6 +1,8 @@
 <template>
-  <portfolio></portfolio>
-  <block></block>
+  <div>
+    <portfolio></portfolio>
+    <block></block>
+  </div>
 </template>
 
 <script>
