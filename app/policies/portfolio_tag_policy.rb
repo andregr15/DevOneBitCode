@@ -1,4 +1,4 @@
-class PortfolioTagsPolicy < ApplicationPolicy
+class PortfolioTagPolicy < ApplicationPolicy
   def create?
     permitted_access?
   end

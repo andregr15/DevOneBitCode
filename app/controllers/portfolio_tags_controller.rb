@@ -1,7 +1,7 @@
 class PortfolioTagsController < ApplicationController
   def create
     build_portfolio_tag
-    authorize @build_portfolio_tag
+    authorize @portfolio_tag
     save_portfolio_tag || render_error(@portfolio_tag.errors.full_messages)
   end
 
