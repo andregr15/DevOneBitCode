@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :portfolios, except: :new do
     resources :tags, only: %i[create destroy], param: :tag_id, controller: :portfolio_tags
+    resources :blocks, only: %i[index create destroy]
   end
 
   resources :tags, only: :index

@@ -14,10 +14,24 @@ class Block < ApplicationRecord
     additional_information: 10
   }
 
-  enum side: [
-    :left,
-    :right
-  ]
+  enum side: {
+    left: 1,
+    right: 2
+  }, 
+  _suffix: true
 
   validates :kind, presence: true, uniqueness: { scope: :portfolio_id }
+
+  validates :side, :position, presence: true
+
+  validates_with KindSideValidator
+
+  before_validation :set_position, on: :create, unless: -> { self.position.present? }
+
+  private
+
+  def set_position
+    last_block_position = self.portfolio.blocks.where(side: self.side).maximum(:position)
+    self.position = last_block_position ? last_block_position + 1 : 0
+  end
 end
