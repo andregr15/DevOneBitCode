@@ -42,7 +42,7 @@ gem 'mini_magick'
 
 gem 'devise'
 
-gem 'pundit'
+gem 'pundit', '2.0.1'
 
 group :test do
   gem 'cucumber-rails', require: false

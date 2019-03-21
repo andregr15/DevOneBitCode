@@ -3,12 +3,12 @@ class PortfolioPolicy < ApplicationPolicy
     true
   end
 
-  def show?
-    true
-  end
-
   def create?
     permitted_action?
+  end
+
+  def show?
+    true
   end
 
   def edit?
@@ -19,7 +19,7 @@ class PortfolioPolicy < ApplicationPolicy
     edit?
   end
 
-  def destroy
+  def destroy?
     permitted_action?
   end
 
@@ -31,10 +31,6 @@ class PortfolioPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      permitted_portfolios
-    end
-
-    def permitted_portfolios
       user.portfolios
     end
   end

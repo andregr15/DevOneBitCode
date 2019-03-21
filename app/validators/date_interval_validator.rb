@@ -1,4 +1,4 @@
-class DateIntervalValidator < ActiveModel::DateIntervalValidator
+class DateIntervalValidator < ActiveModel::Validator
   def validate(record)
     @record = record
     if @record.start_date.present?

@@ -24,7 +24,7 @@ class PortfolioResourcesController < ApplicationController
   def destroy
     @resource = load_portfolio_resource
     authorize @resource.portfolio
-    destroy_resource || render_error("This resource can't be destroyed")
+    destroy_resource || render_error(["This resource can't be destroyed"])
   end
 
   private
@@ -42,7 +42,7 @@ class PortfolioResourcesController < ApplicationController
   end
 
   def render_resource(resource)
-    render json: { resource: @resource }
+    render json: { resource: resource }
   end
 
   def render_error(message)
