@@ -27,7 +27,7 @@ class BlocksController < ApplicationController
   end
 
   def destroy_block
-    @block.destroy && head :ok
+    @block.destroy && head(:ok)
   end
 
   def render_error

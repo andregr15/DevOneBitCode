@@ -1,4 +1,4 @@
-Dado 'portólio possui o bloco {string} à {side}' do |kind, side|
+Dado "portólio possui o bloco {string} à {word}" do |kind, side|
   side = (side == 'direita' ? 'right' : 'left')
   find("#add-#{side}-block").click
   within '#add-block-modal' do
@@ -8,7 +8,7 @@ Dado 'portólio possui o bloco {string} à {side}' do |kind, side|
   wait_for_ajax
 end
 
-Quando 'adiciona um bloco {string} à {side}' do |kind, side|
+Quando "adiciona um bloco {string} à {word}" do |kind, side|
   side = (side == 'direita' ? 'right' : 'left')
   find("#add-#{side}-block").click
   within '#add-block-modal' do
@@ -18,7 +18,7 @@ Quando 'adiciona um bloco {string} à {side}' do |kind, side|
   wait_for_ajax
 end
 
-Então 'o bloco {string} é adicionado ao portfólio' do |kind|
+Então "o bloco {string} é adicionado ao portfólio" do |kind|
   class_to_check = kind.downcase
   expect(page).to have_css(".bloco-#{class_to_check}")
 end

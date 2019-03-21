@@ -22,7 +22,7 @@
       </div>
 
       <div class="card-panel center">
-        <img src='/asses/add_portolio.png' id='add-right-block' @click="openModalToAdd('right')" />
+        <img src='/assets/add_portfolio.png' id='add-right-block' @click="openModalToAdd('right')" />
       </div>
     </div>
 
@@ -65,7 +65,7 @@
       Education,
       'additional_information': AdditionalInformation,
       About,
-      Contcat,
+      Contact,
       Experience,
       Hobby,
       Language,

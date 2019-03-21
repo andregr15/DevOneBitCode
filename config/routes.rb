@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :portfolios, except: :new do
     resources :tags, only: %i[create destroy], param: :tag_id, controller: :portfolio_tags
     resources :blocks, only: %i[index create destroy]
+
+    resources :profiles, only: %i[index update]
   end
 
   resources :tags, only: :index
