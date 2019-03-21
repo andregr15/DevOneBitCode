@@ -31,7 +31,7 @@ class PortfolioResourcesController < ApplicationController
 
   def destroy_resource
     if @resource.destroy
-      head: ok
+      head :ok
     end
   end
 
@@ -42,7 +42,7 @@ class PortfolioResourcesController < ApplicationController
   end
 
   def render_resource(resource)
-    render json: { resource: resource }
+    render json: { resource: @resource }
   end
 
   def render_error(message)

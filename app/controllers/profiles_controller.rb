@@ -2,7 +2,7 @@ class ProfilesController < PortfolioResourcesController
   protected
 
   def render_resource(profile)
-    render json: { profile: profile }, methods? [:photo_url]
+    render json: { profile: profile }, methods: [:photo_url]
   end
 
   def load_portfolio_resources

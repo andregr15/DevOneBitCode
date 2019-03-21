@@ -1,5 +1,5 @@
 class PortfolioResourcePolicy < PortfolioPolicy
   def index?
-    permmited_action?
+    permitted_action?
   end
 end

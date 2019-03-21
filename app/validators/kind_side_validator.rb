@@ -28,6 +28,6 @@ class KindSideValidator < ActiveModel::Validator
   end
 
   def validate_side_kind
-    @record.errors.add(:base, "can't be at #{record.side} side") unless send("#{record.side}_kind?")
+    @record.errors.add(:base, "can't be at #{@record.side} side") unless send("#{@record.side}_kind?")
   end
 end

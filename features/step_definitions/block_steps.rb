@@ -1,4 +1,4 @@
-Dado "portólio possui o bloco {string} à {word}" do |kind, side|
+Dado "portfólio possui o bloco {string} à {word}" do |kind, side|
   side = (side == 'direita' ? 'right' : 'left')
   find("#add-#{side}-block").click
   within '#add-block-modal' do
