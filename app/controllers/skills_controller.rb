@@ -10,7 +10,7 @@ class SkillsController < PortfolioResourcesController
   end
 
   def build_portfolio_resource
-    @portfolio.skills.build_portfolio_resource
+    @portfolio.skills.build
   end
 
   def portfolio_resource_params

@@ -22,12 +22,12 @@ end
 
 Então "a habilidade é adicionada ao portfólio" do
   @portfolio.reload
-  expect(@portfolio.skill.count).to eq(1)
+  expect(@portfolio.skills.count).to eq(1)
   expect(page).to have_css(".resource-skill", count: 1)
 end
 
 Então "a habilidade é removida do portfólio" do
   @portfolio.reload
-  expect(@portfolio.skill.count).to eq(0)
+  expect(@portfolio.skills.count).to eq(0)
   expect(page).not_to have_css(".resource-skill")
 end
