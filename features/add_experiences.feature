@@ -6,7 +6,7 @@ Funcionalidade: Adicionar experiências ao Portfólio
 
   Cenário de Fundo:
     Dado usuário está logado
-    E possui o portfólio com a slug 'my_portfolio'
+    E possui o portfólio com slug 'my_portfolio'
     E o portfólio possui um bloco de experiência
     E acessa a página de edição do portfólio
   
