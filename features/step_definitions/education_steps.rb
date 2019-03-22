@@ -24,12 +24,14 @@ Quando "remove a educação" do
 end
 
 Então "a educação é adicionada ao portfólio" do
+  wait_for_ajax
   @portfolio.reload
   expect(@portfolio.educations.count).to eq(1)
   expect(page).to have_css(".resource-education", count: 1)
 end
 
 Então "a educação é removida do portfólio" do
+  wait_for_ajax
   @portfolio.reload
   expect(@portfolio.educations.count).to eq(0)
   expect(page).not_to have_css(".resource-education")

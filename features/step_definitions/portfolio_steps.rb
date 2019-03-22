@@ -32,11 +32,13 @@ end
 Quando "clica no checkbox {string}" do |field|
   @new_value = !@portfolio[field]
   find("input[name='portfolio[#{field}]'] + span").click
+  wait_for_ajax
 end
 
 Quando "clica no switch {string}" do |field|
   @new_value = !@portfolio[field]
   find("input[name='portfolio[#{field}]'] + span").click
+  wait_for_ajax
 end
 
 Então "o campo {string} do portfólio é atualizado" do |field|
