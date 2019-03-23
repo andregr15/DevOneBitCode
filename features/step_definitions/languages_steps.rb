@@ -21,12 +21,14 @@ Quando "remove a linguagem" do
 end
 
 Então "a linguagem é adicionada ao portfólio" do
+  wait_for_ajax
   @portfolio.reload
-  exepct(@portfolio.languages.count).to eq(1)
+  expect(@portfolio.languages.count).to eq(1)
   expect(page).to have_css(".resource-language", count: 1)
 end
 
 Então "a linguagem é removida do portfólio" do
+  wait_for_ajax
   @portfolio.reload
   expect(@portfolio.languages.count).to eq(0)
   expect(page).not_to have_css('.resource-language')
