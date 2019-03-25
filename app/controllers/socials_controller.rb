@@ -13,7 +13,7 @@ class SocialsController < PortfolioResourcesController
     @portfolio.socials.build
   end
 
-  def portfolio_resoruce_params
+  def portfolio_resource_params
     params.require(:social).permit(:kind, :url)
   end
 end

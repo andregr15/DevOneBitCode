@@ -11,5 +11,5 @@ class Social < ApplicationRecord
 
   validates :kind, presence: true
 
-  validates url:, presence: true, http_url: true
+  validates :url, presence: true, http_url: true
 end
