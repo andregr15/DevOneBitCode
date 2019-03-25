@@ -1,4 +1,6 @@
 # language: pt
+
+@javascript
 Funcionalidade: Usuário adiciona sobre mim ao Portfólio
   O usuário adiciona o sobre mim ao Portfólio
 
