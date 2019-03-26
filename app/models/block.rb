@@ -1,5 +1,6 @@
 class Block < ApplicationRecord
   belongs_to :portfolio
+  has_one :additional_information, dependent: :delete
 
   enum kind: { 
     profile: 1,
