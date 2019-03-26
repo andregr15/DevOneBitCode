@@ -21,7 +21,7 @@
 
     <div v-for="social in socials" :key="social.id" class="row resource-list">
       <div class="col l12 m12 s12">
-        <div class="row resourse-item resrouce-social">
+        <div class="row resource-item resource-social">
           <div class="col l10 m10 s10 valign-wrapper">
             <img alt="socials picture" :src="`/assets/socials/${social.kind}.png`" width="12%" />   
             <a :href="social.url" target="_blank">{{ relativePath(social.url) }}</a>
