@@ -12,7 +12,8 @@ class Block < ApplicationRecord
     language: 7,
     social: 8,
     contact: 9,
-    additional_information: 10
+    additional_information: 10,
+    contact_form: 11
   }
 
   enum side: {

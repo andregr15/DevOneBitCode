@@ -23,7 +23,8 @@ class KindSideValidator < ActiveModel::Validator
       'hobby',
       'skill',
       'language',
-      'additional_information'
+      'additional_information',
+      'contact_form'
     ].include? @record.kind
   end
 
