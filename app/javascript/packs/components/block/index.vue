@@ -102,6 +102,7 @@
           profile: "Perfil",
           about: "Sobre mim",
           social: "Social",
+          contact: "Contato",
           additional_information: "Informações Adicionais"
         },
         rightKinds: {

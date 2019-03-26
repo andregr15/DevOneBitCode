@@ -1,4 +1,8 @@
 module PortfolioHelper
+  def render_block(block)
+    render partial: "portfolios/shared/#{block.kind}_widget.html.erb", locals: { portfolio: block.portfolio }
+  end
+  
   def render_profile_photo(portfolio)
     if portfolio.profile.present? && portfolio.profile.photo.attached?
       image_url = url_for(portfolio.profile.photo.variant(resize: '62x62'))
