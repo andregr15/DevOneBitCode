@@ -7,10 +7,13 @@
       </div>
 
       <div class="col l4 m4 s12">
-        <div class="card-panel" v-for='block in leftBlocks' :key='block.id'>
-          <a class="fa fa-times grey-text right" @click='removeBlock(block)'></a>
-          <component :is='block.kind' :portfolioId='portfolioId' :blockId='block.id'></component>
-        </div>
+
+        <draggable v-model="leftBlocks" @end="updateBlocks(leftBlocks)">
+          <div class="card-panel" v-for='block in leftBlocks' :key='block.id'>
+            <a class="fa fa-times grey-text right" @click='removeBlock(block)'></a>
+            <component :is='block.kind' :portfolioId='portfolioId' :blockId='block.id'></component>
+          </div>
+        </draggable>
 
         <div class="card-panel center">
           <img src='/assets/add_portfolio.png' id='add-left-block' @click="openModalToAdd('left')" />
@@ -18,10 +21,12 @@
       </div>
 
       <div class="col l8 m8 s12">
-        <div class="card-panel" v-for='block in rightBlocks' :key='block.id'>
-          <a href="" class="fa fa-times grey-text right" @click='removeBlock(block)'></a>
-          <component :is='block.kind' :portfolioId='portfolioId' :blockId='block.id'></component>
-        </div>
+        <draggable v-model="rightBlocks" @end="updateBlocks(rightBlocks)">
+          <div class="card-panel" v-for='block in rightBlocks' :key='block.id'>
+            <a href="" class="fa fa-times grey-text right" @click='removeBlock(block)'></a>
+            <component :is='block.kind' :portfolioId='portfolioId' :blockId='block.id'></component>
+          </div>
+        </draggable>
 
         <div class="card-panel center">
           <img src='/assets/add_portfolio.png' id='add-right-block' @click="openModalToAdd('right')" />
@@ -55,6 +60,8 @@
 </template>
 
 <script>
+  import draggable from 'vuedraggable';
+
   import Profile from '../portfolio_resources/profile';
   import Education from '../portfolio_resources/education';
   import AdditionalInformation from '../portfolio_resources/additional_information';
@@ -79,7 +86,8 @@
       Language,
       Skill,
       Social,
-      'contact_form': ContactForm
+      'contact_form': ContactForm,
+      draggable
     },
 
     data() {
@@ -143,6 +151,23 @@
         this.blockToAdd.side = side;
         this.blockKinds = this[`${side}Kinds`];
         this.modalInstance.open();
+      },
+
+      updateBlocks(blocks) {
+        let blocksToUpdate = blocks.map((block, index) => ({id: block.id, position: index}));
+        this.$http.patch(`/portfolios/${this.portfolioId}/blocks/positions`, { blocks: blocksToUpdate })
+                  .then(
+                    {},
+                    error => {
+                      if(error.body.old_blocks) {
+                        this.blocks = error.body.old_blocks;
+                      }
+                      M.toast({
+                        html: "Ocorreu um erro ao atualizar as posições dos blocos",
+                        classes: "red"
+                      })
+                    }
+                  );
       },
 
       addBlock() {
