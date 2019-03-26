@@ -65,6 +65,7 @@
   import Language from '../portfolio_resources/language';
   import Skill from '../portfolio_resources/skill';
   import Social from '../portfolio_resources/social';
+  import ContactForm from '../portfolio_resources/contact_form';
 
   export default {
     components: {
@@ -77,7 +78,8 @@
       Hobby,
       Language,
       Skill,
-      Social
+      Social,
+      'contact_form': ContactForm
     },
 
     data() {
@@ -91,7 +93,6 @@
         leftKinds: {
           profile: "Perfil",
           about: "Sobre mim",
-          contact: "Contato",
           social: "Social",
           additional_information: "Informações Adicionais"
         },
@@ -101,7 +102,8 @@
           skill: "Habilidade",
           hobby: "Hobby",
           language: "Linguagem",
-          additional_information: "Informações Adicionais"
+          additional_information: "Informações Adicionais",
+          contact_form: "Formulário de contato"
         }
       }
     },
