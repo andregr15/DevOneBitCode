@@ -16,7 +16,7 @@ class Portfolio < ApplicationRecord
   has_many :skills, dependent: :destroy
   has_many :languages, dependent: :destroy
   has_many :socials, dependent: :destroy
-  has_many :contacts, dependent: :destroy
+  has_one :contact, dependent: :destroy
 
   validates :slug, presence: true, uniqueness: true
   validates :tags, length: { 
