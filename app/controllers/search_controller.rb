@@ -2,7 +2,7 @@ class SearchController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @portfolios = SearchPortfolioService.call(search_params)
+    @portfolios = SearchPortfoliosService.call(search_params)
   end
 
   private
