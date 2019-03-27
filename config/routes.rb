@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'search/index'
   root 'pages#home'
   devise_for :users
+
+  get :search, to: 'search#index'
 
   resources :contact_forms, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

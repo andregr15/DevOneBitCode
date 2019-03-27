@@ -44,6 +44,8 @@ gem 'devise'
 
 gem 'pundit', '2.0.1'
 
+gem 'kaminari'
+
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
