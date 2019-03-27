@@ -88,6 +88,17 @@
           }
         }
       }
+
+      .icon_list {
+        .item {
+          margin-bottom: 0;
+        }
+
+        .name {
+          font-weight: 700;
+          font-size: 18px;
+        }
+      }
     }
   }
 }
