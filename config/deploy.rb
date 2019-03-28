@@ -2,7 +2,7 @@
 lock "~> 3.11.0"
 
 set :application, 'dev_onebitcode'
-set :repo_url, 'git@github.com:andregr15/DevOneBitCode.git'
+set :repo_url, 'https://github.com/andregr15/DevOneBitCode'
 
 set :deploy_to, "/var/www/dev_onebitcode"
 append :linked_files, "config/database.yml", "config/storage.yml", "config/master.key"
