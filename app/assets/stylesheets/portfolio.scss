@@ -1,4 +1,4 @@
-.portfolios{
+.portfolios {
   .title{
     font-weight: 700;
     margin-top: 30px;
@@ -7,28 +7,33 @@
     margin-bottom: 10px;
   }
 
-  .portfolio{
-    span.name{
+  .portfolio {
+    
+    img{
+      height: 150px !important;
+    }
+
+    span.name {
       font-size: 0.9em;
       margin-top: 1em;
     }
 
-    div.profession{
+    div.profession {
       margin-top: 0.5em;
       box-shadow: 1px 1px 2px grey;
       -webkit-box-shadow: 1px 1px 2px grey;
       -moz-box-shadow: 1px 1px 2px grey;
     }
 
-    div.tags{
-      span.label{
+    div.tags {
+      span.label {
         border-radius: 1em;
         -webkit-border-radius: 1em;
         -moz-border-radius: 1em;
       }
     }
 
-    div.actions a.btn{
+    div.actions a.btn {
       font-size: 12px;
       border-radius: 0;
       -webkit-border-radius: 0;
@@ -37,35 +42,27 @@
     }
   }
 
-  .add-portfolio{
-    a.new-portfolio > img{
-      margin-top: 55%;
-      margin-bottom: 55%
+  .add-portfolio {
+    .card-panel{
+      height: 456px;
+    }
+    a.new-portfolio > img {
+      padding-top: 65%;
     }
   }
-
 }
 
-div.slug-actions{
-  margin-top: 2%;
+div.slug-actions {
+  margin-top: 4%;
 
-  .element{
-    margin-left: 10%;
-    font-size: 25px;
-    color: get-custom-color('custom-grey');
+  .element {
+    margin-left: 5%;
+    font-size: 20px;
+    color: get-custom-color("custom-grey");
 
-    &:hover{
+    &:hover {
       cursor: pointer;
-      color: get-custom-color('custom-grey', 'darken-1');
+      color: get-custom-color("custom-grey", "darken-1");
     }
-  }
-}
-
-i.tooltipped{
-  color: get-custom-color('custom-grey');
-  
-  &:hover{
-    cursor: default;
-    color: get-custom-color('custom-grey', 'darken-1');
   }
 }

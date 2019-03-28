@@ -46,6 +46,8 @@ gem 'pundit', '2.0.1'
 
 gem 'kaminari'
 
+gem 'mini_magick'
+
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'

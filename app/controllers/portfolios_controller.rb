@@ -17,13 +17,18 @@ class PortfoliosController < ApplicationController
 
   def show
     respond_to do |format|
-      format.json {
+      format.json { 
         @portfolio = Portfolio.find(params[:id])
         authorize @portfolio
         render json: { portfolio: @portfolio }, include: { tags: { only: [:id, :title] } }, status: :ok
       }
       format.html {
-        @portfolio = Portfolio.find_by(slug: params[:slug])
+        @portfolio = Portfolio.find_by!(slug: params[:slug])
+
+        unless @portfolio.active || @portfolio.user == current_user
+          raise ActiveRecord::RecordNotFound
+        end
+        
         authorize @portfolio
       }
     end

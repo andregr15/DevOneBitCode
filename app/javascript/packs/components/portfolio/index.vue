@@ -23,10 +23,7 @@
                   @click='copyToClipboard()'>
               </i>
             
-              <a :href="`/portfolios/${ portfolio.id }`" 
-                  class="fa fa-external-link-square-alt element tooltipped"
-                  data-tooltip='Visualizar'>
-              </a>    
+              <a :href="`/${ portfolio.slug }`" data-tooltip="Visualizar" class="fa fa-external-link-square-alt element tooltipped"></a>  
             </div>
             
             <div class="col offset-l2 l2 m2 s6 center">
