@@ -38,8 +38,6 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'mini_magick'
-
 gem 'devise'
 
 gem 'pundit', '2.0.1'
@@ -47,6 +45,8 @@ gem 'pundit', '2.0.1'
 gem 'kaminari'
 
 gem 'mini_magick'
+
+gem 'moip2'
 
 group :test do
   gem 'cucumber-rails', require: false

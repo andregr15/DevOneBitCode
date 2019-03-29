@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :contact_forms, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :portfolios, except: :new do
+    member do
+      resources :payments, only: %i[index create]
+    end
+    
     resources :tags, only: %i[create destroy], param: :tag_id, controller: :portfolio_tags
     resources :blocks, only: %i[index create destroy] do
       resources :additional_informations, only: %i[index update]
