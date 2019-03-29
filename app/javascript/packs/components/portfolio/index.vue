@@ -1,7 +1,12 @@
 <template>
   <div class="row">
     <div class="col m10 offset-m1 s12">
-      <h5 class="custom-grey-text page-title">Configure seu Portfólio</h5>
+      <h5 class="custom-grey-text page-title">
+        Configure seu Portfólio
+        <a :href="`/portfolios/${portfolio.id}/payments`" class="right chip custom-orange white-text">
+          <b class="white-text">Promova seu Portfólio</b>
+        </a>
+      </h5>
       <div class="card-panel">
         <form>
           <div class="row">
