@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get :search, to: 'search#index'
 
+  post '/webhooks', to: 'webhooks#webhooks'
+
   resources :contact_forms, only: [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :portfolios, except: :new do
