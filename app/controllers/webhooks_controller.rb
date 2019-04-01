@@ -9,7 +9,7 @@ class WebhooksController < ApplicationController
     if params['event'] == 'ORDER.PAID'
       order.update(status: :active)
       order.portfolio.update(featured: true)
-    elsif
+    elsif params['event'] == 'ORDER.NOT_PAID'
       order.update(status: :inactive)
     end
 

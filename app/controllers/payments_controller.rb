@@ -14,7 +14,7 @@ class PaymentsController < ApplicationController
   private
 
   def set_portfolio
-    @portfolio = Portfolio.where(id: params[:id], user_id: current_user.id).first
+    @portfolio = Portfolio.where(id: params[:id], user_id: current_user).first
     redirect_to portfolios_path unless @portfolio.present?
   end
 end
