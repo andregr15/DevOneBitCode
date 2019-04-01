@@ -48,6 +48,8 @@ gem 'mini_magick'
 
 gem 'moip2'
 
+gem 'whenever', require: false
+
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
