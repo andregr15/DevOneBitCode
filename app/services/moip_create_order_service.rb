@@ -13,20 +13,22 @@ class MoipCreateOrderService
   end
 
   private
-
+ 
   def order_json
     {
       ownId: @moip_code,
       amount: {
-        currentcy: 'BRL'
+        currency: 'BRL',
       },
-      items: [{
-        product: 'Premium Dev OneBitCode',
-        category: 'OTHER_CATEGORIES',
-        quantity: 1,
-        detail: '1 mês de premium dev.onebitcode.com',
-        price: 1500
-      }],
+      items: [
+        {
+          product: 'Premium Dev OneBitCode',
+          category: 'OTHER_CATEGORIES',
+          quantity: 1,
+          detail: '1 mês de premium do dev.onebitcode.com',
+          price: 1500
+        }
+      ],
       customer: {
         ownId: @user_moip_code,
         fullname: @params[:fullname],
@@ -54,6 +56,6 @@ class MoipCreateOrderService
   end
 
   def generate_moip_code
-    (0...20).map { ('a'..'z').to_a[rand(26) ]}.join
+    (0...20).map { ('a'..'z').to_a[rand(26)] }.join
   end
 end

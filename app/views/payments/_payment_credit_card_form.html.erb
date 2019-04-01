@@ -1,56 +1,48 @@
 <div class="row">
-  <div class="col m4 offset-m1 s12">
+  <div class="col m4 offset-m1 s12 ">
     <div class="input-field">
       <%= form.text_field "card[fullname]", id: 'fullname', required: true %>
-      <label for="fullname">Nome no cartão</label>
+      <label for="email">Nome no cartão</label>
     </div>
-
     <div class="input-field">
       <%= form.text_field "card[cpf]", id: 'cpf', required: true %>
-      <label for="cpf">CPF</label>
+      <label for="number">CPF</label>
     </div>
-
     <div class="input-field">
       <%= form.date_field "card[birthdate]", id: 'birthdate', required: true %>
-      <label for="birthdate"></label>
+      <label for="cvc">Data de nascimento</label>
     </div>
   </div>
-
   <div class="col m4 offset-m2 s12">
     <div class="input-field">
       <%= form.text_field "card[number]", id: 'card_number', required: true %>
-      <label for="card_number">Número do Cartão</label>
+      <label for="number">Número</label>
     </div>
-
     <div class="input-field">
       <%= form.select("expiration_month", (1..12).to_a) %>
       <label for="expiration_month">Mês de expiração</label>
     </div>
-
     <div class="input-field">
       <%= form.select("expiration_year", credit_card_expiration_year_range) %>
       <label for="expiration_year">Ano de expiração</label>
     </div>
-
     <div class="input-field">
       <%= form.text_field :cvc, id: 'card_cvc', required: true %>
       <label for="cvc">CVC</label>
     </div>
-
     <div class="input-field">
-      <textarea name="public_key" id="public_key" style="display: none;">
------BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0w5JVJ6X+OX4P09o4Pry
-6xoWh93YW9VfuxwQ6/GItEqBykEcBcTyVKtDzC/2Hdi2s1Vd9vB7MIHLKTj0oTQ+
-E41kp5RbhmI12geI2F1YuhpPWvkl3mJIcBKbvJejXVNUG0G/OkMZcQn0zHgUz8Ps
-v+QOIz/nXq1MAfeUrXwhLZOl/7eMgUeEMhWG14OfsUMPgpYtPXCDMNhUHrhJZkkY
-5mJcYQtLSI76V0wBpUw0AZk773uDs1xeOTIrH92QIfx4QfhKtQHawON0wson2nSn
-ScK1omj42fqu3XP1FufHZ3Z2foAKrkyiLJD+28q0D0uvmlWxGxfkSAd0LReSapI5
-5wIDAQAB
------END PUBLIC KEY-----
+      <textarea id="public_key" style="display:none;">
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0w5JVJ6X+OX4P09o4Pry
+          6xoWh93YW9VfuxwQ6/GItEqBykEcBcTyVKtDzC/2Hdi2s1Vd9vB7MIHLKTj0oTQ+
+          E41kp5RbhmI12geI2F1YuhpPWvkl3mJIcBKbvJejXVNUG0G/OkMZcQn0zHgUz8Ps
+          v+QOIz/nXq1MAfeUrXwhLZOl/7eMgUeEMhWG14OfsUMPgpYtPXCDMNhUHrhJZkkY
+          5mJcYQtLSI76V0wBpUw0AZk773uDs1xeOTIrH92QIfx4QfhKtQHawON0wson2nSn
+          ScK1omj42fqu3XP1FufHZ3Z2foAKrkyiLJD+28q0D0uvmlWxGxfkSAd0LReSapI5
+          5wIDAQAB
+          -----END PUBLIC KEY-----
       </textarea>
     </div>
-
     <div class="input-field">
       <%= form.hidden_field "card_hash", value: '' %>
     </div>

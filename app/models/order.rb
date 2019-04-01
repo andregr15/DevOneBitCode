@@ -6,8 +6,8 @@ class Order < ApplicationRecord
 
   private
 
-  def set_due_date
-    # Estamos fixando 1 mês de assinatura
-    self.due_date = Time.now + 1.month
-  end
+    def set_due_date
+      # Estamos fixando 1 mês de assinatura
+      self.due_date = Time.now + 1.month
+    end
 end

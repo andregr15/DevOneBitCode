@@ -1,7 +1,7 @@
 class MoipService
   attr_reader :token, :key
 
-  def initialize
+  def initialize()
     @token = get_token
     @key = get_key
   end

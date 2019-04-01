@@ -13,6 +13,6 @@ class WebhooksController < ApplicationController
       order.update(status: :inactive)
     end
 
-    render json: { status: :ok }
+    render json: {status: :ok}
   end
 end
