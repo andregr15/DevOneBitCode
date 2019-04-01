@@ -5,12 +5,12 @@
 </div>
 
 <div class="row">
-  <div class="col offset-m4 s12 center">
+  <div class="col offset-m4 m4 s12 center">
     <%= form.hidden_field :portfolio_id, value: @portfolio.id %>
     <%= form.submit 'Comprar Premium', class: 'btn btn-large custom-orange' %>
   </div>
 
   <div class="col offset-m2 m2 s12 center">
-    <%= image_tag "/moip.png", class: 'payment_image' %>
-  </div>
+    <%= image_tag "/moip.png", class: 'payment_image responsive-img' %>
+  </div> 
 </div>
