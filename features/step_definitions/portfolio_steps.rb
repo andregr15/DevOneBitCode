@@ -15,6 +15,27 @@ Então "é direcionado para a página de edição do portfólio" do
 end
 
 
+Dado 'possui {int} portfólio(s) cadastrado(s)' do |count|
+  create_list(:portfolio, count, user_id: @user.id)
+end
+
+Quando 'acessa a lista de portfólios' do
+  visit portfolios_path
+end
+
+Então 'os {int} portfólios são listados' do |count|
+  expect(page).to have_css('.portfolio', count: count)
+end
+
+Então 'nenhum portfólio é listado' do
+  expect(page).to have_css('.portfolio', count: 0)
+end
+
+Então 'volta para a página de login' do
+  expect(page).to have_current_path('/users/sign_in')
+end
+
+
 Dado "acessa a página de edição do portfólio" do
   @portfolio ||= @user.portfolios.first
   visit edit_portfolio_path(@portfolio)
@@ -49,4 +70,13 @@ end
 
 Dado 'possui o portfólio com slug {string}' do |slug|
   @portfolio = create(:portfolio, slug: slug, user_id: @user.id)
+end
+
+Quando 'remove o portfólio' do
+  find('a.remove-portfolio').click
+end
+
+Então 'o portfólio é removido' do
+  expect(Portfolio.count).to eql(0)
+  expect(Portfolio.find_by(slug: 'my_portfolio')).to be_nil
 end
