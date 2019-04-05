@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
     
     resources :tags, only: %i[create destroy], param: :tag_id, controller: :portfolio_tags
+    
     resources :blocks, only: %i[index create destroy] do
       resources :additional_informations, only: %i[index update]
       patch :positions, on: :collection, to: 'block_positions#update'

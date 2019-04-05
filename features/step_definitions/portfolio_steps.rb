@@ -74,6 +74,8 @@ end
 
 Quando 'remove o portfólio' do
   find('a.remove-portfolio').click
+  page.driver.browser.switch_to.alert.accept
+  wait_for_ajax
 end
 
 Então 'o portfólio é removido' do
