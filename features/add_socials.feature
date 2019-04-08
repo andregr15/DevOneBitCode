@@ -1,5 +1,6 @@
 # language:pt
 
+@javascript
 Funcionalidade: Adicionar dados sociais ao Portfólio
   Adiona um novo dado social ao Portfólio
 

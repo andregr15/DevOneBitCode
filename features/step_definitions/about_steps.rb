@@ -1,6 +1,5 @@
 Dado "o portfólio possui um bloco de sobre mim" do
   create(:block, kind: :about, side: :left, portfolio_id: @portfolio.id)
-  # create(:about, portfolio_id: @portfolio.id)
 end
 
 Quando "preenche a descrição sobre ele" do
