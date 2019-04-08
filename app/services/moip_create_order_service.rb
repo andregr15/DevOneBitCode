@@ -13,7 +13,7 @@ class MoipCreateOrderService
   end
 
   private
- 
+
   def order_json
     {
       ownId: @moip_code,

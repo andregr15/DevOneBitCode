@@ -10,7 +10,7 @@ class MoipCreatePaymentService
   end
 
   private
- 
+
     def payment_json
       {
         installment_count: 1,

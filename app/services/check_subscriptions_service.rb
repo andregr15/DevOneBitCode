@@ -5,6 +5,14 @@ class CheckSubscriptionsService
         order.update(status: :inactive)
         order.portfolio.update(featured: false)
       end
+
+      if order.due_date - 3.days <= Time.now
+        PremiumExpirationMailer.with({
+          user: order.portfolio.user,
+          portfolio: order.portfolio,
+          order: order
+        }).notify.deliver_later
+      end
     end
   end
 end
