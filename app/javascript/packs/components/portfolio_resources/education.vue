@@ -22,7 +22,7 @@
       </div>
       <div class="input-field col l4 m4 s6">
         <input data-attribute="end_date" v-model="education.end_date" placeholder="Data de Saída" id="education-end-date"
-               class="datepicker font_20 custom-grey-text text-darken-1">
+                class="datepicker font_20 custom-grey-text text-darken-1">
         <label class="active font_20 custom-grey-text text-darken-1">Data de Saída</label>
       </div>
       <div class="input-field col l4 m4 s6">
@@ -78,7 +78,7 @@ export default {
         console.log(this)
         let attribute = this.el.dataset.attribute
         vue.education[attribute] = this.el.value
-       }
+      }
     });
   },
 

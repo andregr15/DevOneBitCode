@@ -1,5 +1,5 @@
 <template>
-  <div class="bloco-contato center">
+  <div class="bloco-form-contato center">
     <h4 class="block-title grey">Formulário de Contato</h4>
     <p>Seu formulário de contato vai aparecer nesta posição</p>
   </div>

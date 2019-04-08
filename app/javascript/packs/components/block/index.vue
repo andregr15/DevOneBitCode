@@ -201,7 +201,7 @@
             .then(
               response => {
                 let indexToRemove = this.blocks.indexOf(blockToRemove);
-                this.blocs.splice(indexToRemove, 1);
+                this.blocks.splice(indexToRemove, 1);
               },
               errors => errors.body.errors.forEach(
                 error => M.toast({

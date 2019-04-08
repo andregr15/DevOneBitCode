@@ -11,7 +11,7 @@ class BlocksController < ApplicationController
   end
 
   def destroy
-    @block = @portfolio.blocks.find(param[:id])
+    @block = @portfolio.blocks.find(params[:id])
     destroy_block || render_error
   end
 
