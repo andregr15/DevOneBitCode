@@ -10,19 +10,11 @@ Quando "preenche a descrição sobre ele" do
     find('body').base.send_keys @about[:description]
   end
 
-  page.execute_script <<-SCRIPT
-      var ckeditor = CKEDITOR.instances.about_description
-      ckeditor.focus()
-      ckeditor.updateElement()
-  SCRIPT
-  #fill_in "about_description", visible: false, with: @about[:description]
-  #page.execute_script("document.getElementsByClassName('ckeditor')[0].dispatchEvent(new Event('blur'));")
-  # page.find(".page-footer").click
-  wait_for_ajax
+  find('body').click
+  sleep(2)
 end
 
 Então "a descrição sobre ele é adicionada ao portfólio" do
-  wait_for_ajax
   @portfolio.reload
-  expect(@portfolio.about.description).to eq(@about[:description])
+  expect(@portfolio.about.description).to eql("<p>#{@about[:description]}My description</p>\n")
 end

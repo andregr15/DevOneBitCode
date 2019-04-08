@@ -6,7 +6,7 @@ class ContactsController < PortfolioResourcesController
   end
 
   def load_portfolio_resource
-    @portfolio.contact || @portfolio.contact = Contact.create(email: 'example@example.com', phone: '11 1111 11111', portfolio_id: @portfolio.id)
+    @portfolio.contact || @portfolio.create_contact(email: 'example@example.com', phone: '11 1111 11111')
   end
 
   def build_portfolio_resource
