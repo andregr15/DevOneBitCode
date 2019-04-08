@@ -82,3 +82,11 @@ Então 'o portfólio é removido' do
   expect(Portfolio.count).to eql(0)
   expect(Portfolio.find_by(slug: 'my_portfolio')).to be_nil
 end
+
+Quando "clica no botão visualizar o portfólio" do
+  find("a.btn.orange", text: "VISUALIZAR").click
+end
+
+Então "é redirecionado para a tela de visualização do portfólio" do
+  expect(page.current_path).to eql("/#{@portfolio.slug}")
+end
