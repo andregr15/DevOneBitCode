@@ -2,7 +2,7 @@ Dado "o portfólio possui um bloco de dados sociais" do
   create(:block, kind: :social, side: :left, portfolio_id: @portfolio.id)
 end
 
-Dado "o portfólio possui 1 dado social" do
+Dado "o portfólio possui 1 bloco de dados sociais" do
   create(:block, kind: :social, side: :left, portfolio_id: @portfolio.id)
   @social = create(:social, portfolio_id: @portfolio.id)
 end

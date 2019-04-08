@@ -10,7 +10,7 @@
 
     <div class="row">
       <div class="input-field col l12 s12 m12">
-        <vue-ckeditor v-model="additional_information.description" :config="config" @blur="submit()"/>
+        <vue-ckeditor v-model="additional_information.description" :config="config" @blur="submit()" id="additional_information_description"/>
       </div>
     </div>
   </div>
