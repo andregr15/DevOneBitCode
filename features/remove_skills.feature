@@ -10,6 +10,6 @@ Funcionalidade: Remover habilidades do Portfólio
     E o portfólio possui 1 habilidade
     E acessa a página de edição do portfólio
 
-  Cenário: Usuário remove uma hablidade do portfólio
+  Cenário: Usuário remove uma habilidade do portfólio
     Quando remove a habilidade
     Então a habilidade é removida do portfólio
