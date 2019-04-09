@@ -73,6 +73,7 @@
   import Skill from '../portfolio_resources/skill';
   import Social from '../portfolio_resources/social';
   import ContactForm from '../portfolio_resources/contact_form';
+  import GithubRepositories from '../portfolio_resources/github_repositories';
 
   export default {
     components: {
@@ -87,6 +88,7 @@
       Skill,
       Social,
       'contact_form': ContactForm,
+      'github_repositories': GithubRepositories,
       draggable
     },
 
@@ -112,7 +114,8 @@
           hobby: "Hobby",
           language: "Linguagem",
           additional_information: "Informações Adicionais",
-          contact_form: "Formulário de contato"
+          contact_form: "Formulário de contato",
+          github_repositories: "Repositórios Github"
         }
       }
     },

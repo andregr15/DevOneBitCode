@@ -13,7 +13,8 @@ class Block < ApplicationRecord
     social: 8,
     contact: 9,
     additional_information: 10,
-    contact_form: 11
+    contact_form: 11,
+    github_repositories: 12
   }
 
   enum side: {
