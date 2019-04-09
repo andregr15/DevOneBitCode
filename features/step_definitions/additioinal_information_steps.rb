@@ -17,6 +17,6 @@ end
 
 Então "a informação adicional é adicionada" do
   @portfolio.reload
-  expect(@portfolio.additional_information.title).to eql(@additional_information[:title])
-  expect(@portfolio.additional_information.description).to eql("<p>#{@additional_information[:description]}My description</p>\n")
+  expect(@portfolio.additional_informations.first.title).to eql(@additional_information[:title])
+  expect(@portfolio.additional_informations.first.description).to eql("<p>#{@additional_information[:description]}My description</p>\n")
 end
