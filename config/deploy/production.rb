@@ -61,7 +61,7 @@
 #   }
 
 set :branch, 'master'
-set :server_address, '134.209.213.76'
+set :server_address, '157.230.84.28'
 ask(:password, nil, echo: false)
 server fetch(:server_address), user: "deploy", roles: %w{app db web} 
 set :nginx_server_name, fetch(:server_address)

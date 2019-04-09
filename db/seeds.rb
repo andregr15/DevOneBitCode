@@ -11,7 +11,7 @@ languages.each do |language|
 end
 
 User.create(email: 'example@onebitcode.com', password: '123456', password_confirmation: '123456')
-Portfolio.create(user: User.last, slug: 'leoscorza')
+Portfolio.create(user: User.last, slug: 'leoscorza', active: true, listed: true, featured: true)
 
 Profile.create(title: 'Full Stack Programmer', name: 'Leonardo Scorza', portfolio: Portfolio.last)
 Block.create(portfolio: Portfolio.last, kind: :profile, side: :left, position: 1)
