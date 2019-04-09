@@ -14,7 +14,8 @@ class Block < ApplicationRecord
     contact: 9,
     additional_information: 10,
     contact_form: 11,
-    github_repositories: 12
+    github_repositories: 12,
+    gitlab_repositories: 13
   }
 
   enum side: {

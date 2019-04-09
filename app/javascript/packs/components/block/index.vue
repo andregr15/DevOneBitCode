@@ -74,6 +74,7 @@
   import Social from '../portfolio_resources/social';
   import ContactForm from '../portfolio_resources/contact_form';
   import GithubRepositories from '../portfolio_resources/github_repositories';
+  import GitlabRepositories from '../portfolio_resources/gitlab_repositories';
 
   export default {
     components: {
@@ -89,6 +90,7 @@
       Social,
       'contact_form': ContactForm,
       'github_repositories': GithubRepositories,
+      'gitlab_repositories': GitlabRepositories,
       draggable
     },
 
@@ -115,7 +117,8 @@
           language: "Linguagem",
           additional_information: "Informações Adicionais",
           contact_form: "Formulário de contato",
-          github_repositories: "Repositórios Github"
+          github_repositories: "Repositórios Github",
+          gitlab_repositories: "Repositórios Gitlab"
         }
       }
     },

@@ -49,7 +49,8 @@
           twitter: "Twitter",
           linkedin: "LinkedIn",
           github: "Github",
-          instagram: "Instagram"
+          instagram: "Instagram",
+          gitlab: "Gitlab"
         }
       }
     },

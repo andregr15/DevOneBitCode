@@ -25,7 +25,8 @@ class KindSideValidator < ActiveModel::Validator
       'language',
       'additional_information',
       'contact_form',
-      'github_repositories'
+      'github_repositories',
+      'gitlab_repositories'
     ].include? @record.kind
   end
 

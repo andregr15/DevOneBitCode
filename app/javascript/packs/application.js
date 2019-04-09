@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import App from './app.vue';
-import App1 from './app1.vue';
+import Github from './github_repositories.vue';
+import Gitlab from './gitlab_repositories.vue';
 import VueResource from 'vue-resource';
 import TurbolinksAdapter from 'vue-turbolinks';
 
@@ -21,9 +22,20 @@ document.addEventListener('turbolinks:load', () => {
   if(document.getElementById('github-repos')) {
     const app = new Vue({
       el: '#github-repos',
-      render: h => h(App1, {
+      render: h => h(Github, {
         props:{
           portfolioId: document.querySelector("#github-repos").dataset.portfolioId
+        }
+      })
+    })
+  }
+
+  if(document.getElementById('gitlab-repos')) {
+    const app = new Vue({
+      el: '#gitlab-repos',
+      render: h => h(Gitlab, {
+        props:{
+          portfolioId: document.querySelector("#gitlab-repos").dataset.portfolioId
         }
       })
     })

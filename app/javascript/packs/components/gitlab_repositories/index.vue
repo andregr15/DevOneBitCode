@@ -11,7 +11,7 @@
         </div>
 
         <div class="col m8 s12">
-          <a :href="repository.html_url" class="custom-grey-text text-darken-1">{{repository.html_url}}</a>
+          <a :href="repository.web_url" class="custom-grey-text text-darken-1">{{repository.web_url}}</a>
         </div>
       </div>
     </div>
@@ -33,22 +33,22 @@
           .get({ portfolioId: this.portfolioId })
           .then(
             response => {
-              let github = response.body.resource.filter(x => x.kind == 'github');
-              if (github){
-                let index = github[0].url.lastIndexOf('/') + 1;
-                let user = github[0].url.substring(index);
-                fetch(`https://api.github.com/users/${ user }/repos`)
+              let gitlab = response.body.resource.filter(x => x.kind == 'gitlab');
+              if (gitlab){
+                let index = gitlab[0].url.lastIndexOf('/') + 1;
+                let user = gitlab[0].url.substring(index);
+                fetch(`https://gitlab.com/api/v4/users/${ user }/projects`)
                     .then(
                       response => (response.json()).then(data => this.repositories = data),
                       error => M.toast({
-                        html: "Ocorreu um erro ao carregar os dados do github",
+                        html: "Ocorreu um erro ao carregar os dados do gitlab",
                         classes: "red"
                       })
                     );
               }
             },
             error => M.toast({
-              html: "Ocorreu um erro ao carregar os dados do github",
+              html: "Ocorreu um erro ao carregar os dados do gitlab",
               classes: "red"
             })
           );

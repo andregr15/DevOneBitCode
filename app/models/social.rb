@@ -6,7 +6,8 @@ class Social < ApplicationRecord
     twitter: 2,
     linkedin: 3,
     github: 4,
-    instagram: 5
+    instagram: 5,
+    gitlab: 6
   }
 
   validates :kind, presence: true
