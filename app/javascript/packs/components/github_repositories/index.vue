@@ -1,5 +1,8 @@
 <template>
   <div class="col m10 offset-m1 s10 offset-s1">
+    <div v-if="this.repositories.length == 0">
+      <p class="custom-grey-text text-darken-1">Sem informações do github</p>
+    </div>
     <div v-for="repository in this.repositories" :key="repository.name">
       <div class="row custom-space">
         <div class="col m4 s12 custom-blue">
